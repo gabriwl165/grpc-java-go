@@ -1,0 +1,20 @@
+syntax = "proto3";
+package proto;
+
+option java_multiple_files = true;
+option java_package = "generated";
+
+// Add this line to specify the Go package path
+option go_package = "/home/gabs/Documents/projetos/grpc-java-go/src/main/proto";
+
+message HealthCheckResponse {
+  string message = 1 ;
+}
+
+message Empty {
+
+}
+
+service healthCheck {
+  rpc hello(Empty) returns (HealthCheckResponse);
+}
